@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.example.nasaapp.R
-import com.prateek.imagesapp.ImageDetailPagerFragment
 import kotlinx.android.synthetic.main.fragment_image_detail.*
 
 /**
@@ -25,7 +24,7 @@ class ImageDetailFragment : Fragment(R.layout.fragment_image_detail) {
         val adapter = ImageSlidePageAdapter((activity as ImageListActivity).supportFragmentManager)
         imagesViewPager.adapter = adapter
         imagesViewPager.currentItem = imageViewModel.selectedImageIndex
-        imagesViewPager.addOnPageChangeListener(object: ViewPager.SimpleOnPageChangeListener() {
+        imagesViewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
@@ -37,7 +36,8 @@ class ImageDetailFragment : Fragment(R.layout.fragment_image_detail) {
         })
     }
 
-    private inner class ImageSlidePageAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    private inner class ImageSlidePageAdapter(fragmentManager: FragmentManager) :
+        FragmentStatePagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         override fun getItem(position: Int): Fragment {
             return ImageDetailPagerFragment(position)
         }

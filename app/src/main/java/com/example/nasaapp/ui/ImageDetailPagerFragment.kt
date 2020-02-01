@@ -1,4 +1,4 @@
-package com.prateek.imagesapp
+package com.example.nasaapp.ui
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -13,7 +13,6 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.nasaapp.R
 import com.example.nasaapp.model.ImageModel
-import com.example.nasaapp.ui.ImageListViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_COLLAPSED
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED

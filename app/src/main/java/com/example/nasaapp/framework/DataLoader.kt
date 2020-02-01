@@ -9,6 +9,10 @@ import java.nio.charset.Charset
 
 class DataLoader {
 
+    init {
+        NasaImageApplication.application.appComponent.inject(this)
+    }
+
     fun fetchImageData(): List<ImageModel> {
         val jsonString = loadJsonFromAsset()
         val gson = Gson()
