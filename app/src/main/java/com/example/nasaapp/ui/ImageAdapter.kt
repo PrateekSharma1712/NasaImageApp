@@ -1,7 +1,6 @@
 package com.example.nasaapp.ui
 
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,15 +20,19 @@ import com.example.nasaapp.model.ImageModel
 import kotlinx.android.synthetic.main.line_item_image.view.*
 
 
-class ImageAdapter :
+class ImageAdapter(private val imageClickListener: ImageClickListener) :
     ListAdapter<ImageModel, ImageAdapter.ImageViewHolder>(DiffCallback) {
+
+    interface ImageClickListener {
+        fun onImageClicked(index: Int)
+    }
 
     val requestOptions = RequestOptions()
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .override(200, 200)
 
     inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(imageModel: ImageModel) {
+        fun bind(imageModel: ImageModel, imageClickListener: ImageClickListener) {
             Glide.with(itemView.context).load(imageModel.url).apply(requestOptions)
                 .transition(
                     DrawableTransitionOptions.withCrossFade()
@@ -60,7 +63,7 @@ class ImageAdapter :
 
             itemView.titleTextView.text = imageModel.title
             itemView.setOnClickListener {
-                Log.d("Image Model", imageModel.title!!)
+                imageClickListener.onImageClicked(adapterPosition)
             }
         }
     }
@@ -77,7 +80,7 @@ class ImageAdapter :
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imageModel = getItem(position)
-        holder.bind(imageModel)
+        holder.bind(imageModel, imageClickListener)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<ImageModel>() {

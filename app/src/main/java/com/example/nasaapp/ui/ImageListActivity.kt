@@ -22,6 +22,16 @@ class ImageListActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController, appBarConfiguration)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.imageDetailFragment) {
+                updateImageDetailTitle(imagesViewModel.selectedImageIndex)
+            }
+        }
+    }
+
+    fun updateImageDetailTitle(position: Int) {
+        toolbar.title = imagesViewModel.getImageTitle(position)
     }
 
 }

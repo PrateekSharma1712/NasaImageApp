@@ -9,5 +9,16 @@
         android:id="@+id/imageGridFragment"
         android:name="com.example.nasaapp.ui.ImageGridFragment"
         android:label="@string/image_listing"
-        tools:layout="@layout/fragment_image_grid" />
+        tools:layout="@layout/fragment_image_grid">
+
+        <action
+            android:id="@+id/action_image_clicked"
+            app:destination="@id/imageDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageDetailFragment"
+        android:name="com.example.nasaapp.ui.ImageDetailFragment"
+        android:label="@string/image_detail" />
 </navigation>

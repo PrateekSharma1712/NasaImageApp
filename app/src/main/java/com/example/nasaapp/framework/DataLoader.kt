@@ -18,7 +18,7 @@ class DataLoader {
     private fun loadJsonFromAsset(): String? {
         return try {
             val inputStream: InputStream? =
-                NasaImageApplication.getApplicationContext().assets?.open("data.json")
+                NasaImageApplication.application.assets?.open("data.json")
             val size = inputStream?.available()
             val buffer = ByteArray(size ?: 0)
             inputStream?.read(buffer)

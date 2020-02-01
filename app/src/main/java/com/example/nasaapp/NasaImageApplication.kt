@@ -5,20 +5,14 @@ import android.content.Context
 
 class NasaImageApplication : Application() {
 
-    init {
-        instance = this
-    }
-
     companion object {
-        private var instance: NasaImageApplication? = null
-
-        fun getApplicationContext(): Context {
-            return instance!!.applicationContext
-        }
+        @get:Synchronized
+        lateinit var application: NasaImageApplication
+            private set
     }
 
     override fun onCreate() {
         super.onCreate()
-        val context = NasaImageApplication.getApplicationContext()
+        application = this
     }
 }
