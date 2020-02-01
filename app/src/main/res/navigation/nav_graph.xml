@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_image_clicked"
-            app:destination="@id/imageDetailFragment" />
+            app:destination="@id/imageDetailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
