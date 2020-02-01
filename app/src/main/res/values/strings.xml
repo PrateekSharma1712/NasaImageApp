@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Nasa App</string>
     <string name="nasa_image">NASA Image</string>
+    <string name="image_listing">Nasa Images</string>
 </resources>
