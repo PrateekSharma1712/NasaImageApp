@@ -31,10 +31,10 @@ class ImageDetailPagerFragment(private val position: Int) :
         imageModel = imageViewModel.getImageModelByPosition(position)
 
         loadImage()
-        initialiseBottomSheet()
     }
 
     private fun initialiseBottomSheet() {
+        imageDetailBottomSheet.visibility = View.VISIBLE
         val sheetBehavior = BottomSheetBehavior.from(imageDetailBottomSheet)
         imageDetailBottomSheet.setOnClickListener {
             sheetBehavior.state =
@@ -42,7 +42,6 @@ class ImageDetailPagerFragment(private val position: Int) :
         }
 
         explanationTextView.text = imageModel?.explanation
-
     }
 
     private fun loadImage() {
@@ -58,6 +57,7 @@ class ImageDetailPagerFragment(private val position: Int) :
                 ): Boolean {
                     imageLoadingProgressBar.visibility = View.GONE
                     fullScreenImageView.visibility = View.VISIBLE
+                    initialiseBottomSheet()
                     return false
                 }
 

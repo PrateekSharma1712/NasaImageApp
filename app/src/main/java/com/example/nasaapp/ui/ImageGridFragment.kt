@@ -2,6 +2,7 @@ package com.example.nasaapp.ui
 
 
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,6 +33,14 @@ class ImageGridFragment : Fragment(R.layout.fragment_image_grid), ImageAdapter.I
                 setHasFixedSize(true)
             }
             imageAdapter.submitList(imagesViewModel.imagesLiveData.value)
+            imagesRecyclerView.visibility = View.VISIBLE
+            noNetworkImageView.visibility = View.GONE
+
+        })
+
+        imagesViewModel.isConnectedToInternet.observe(activity!!, Observer {
+            noNetworkImageView.visibility = View.VISIBLE
+            imagesRecyclerView.visibility = View.GONE
         })
     }
 

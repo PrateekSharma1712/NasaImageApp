@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ImageGridFragment">
+    tools:context=".ui.ImageListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imagesRecyclerView"
@@ -18,7 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+        android:visibility="gone"
         tools:itemCount="25"
         tools:listitem="@layout/line_item_image" />
+
+    <Button
+        android:id="@+id/noNetworkImageView"
+        style="?attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/ic_unable_to_download"
+        android:padding="@dimen/dimen_40dp"
+        android:text="@string/no_internet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:clickable="false"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

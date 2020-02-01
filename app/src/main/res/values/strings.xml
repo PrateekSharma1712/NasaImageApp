@@ -3,4 +3,6 @@
     <string name="nasa_image">NASA Image</string>
     <string name="image_listing">Nasa Images</string>
     <string name="image_detail">Image Details</string>
+    <string name="explanation">Explanation</string>
+    <string name="no_internet">Oops! It seems you are not connected to internet</string>
 </resources>
