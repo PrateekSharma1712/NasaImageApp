@@ -11,29 +11,31 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:visibility="gone"
+        app:spanCount="2"
         tools:itemCount="25"
+        android:alpha="0"
         tools:listitem="@layout/line_item_image" />
 
     <Button
         android:id="@+id/noNetworkImageView"
         style="?attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:alpha="1"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:clickable="false"
         android:drawableTop="@drawable/ic_unable_to_download"
         android:padding="@dimen/dimen_40dp"
         android:text="@string/no_internet"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:clickable="false"
-        android:layout_height="wrap_content" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

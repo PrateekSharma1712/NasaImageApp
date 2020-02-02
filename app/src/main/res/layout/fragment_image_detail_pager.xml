@@ -31,9 +31,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_bottom_sheet"
         android:orientation="vertical"
+        android:visibility="gone"
         app:behavior_hideable="false"
         app:behavior_peekHeight="@dimen/dimen_40dp"
-        android:visibility="gone"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
         <TextView

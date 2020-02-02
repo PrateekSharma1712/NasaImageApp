@@ -13,15 +13,16 @@ class ImageListViewModel : ViewModel() {
     lateinit var dataLoader: DataLoader
     var imagesLiveData = MutableLiveData<List<ImageModel>>()
     var selectedImageIndex: Int = 0
-    var isConnectedToInternet = MutableLiveData<Boolean>()
+    val isNetworkConnected = MutableLiveData<Boolean>()
 
     init {
         NasaImageApplication.application.appComponent.inject(this)
-        isConnectedToInternet.value = (NasaImageApplication.application.isConnectedToInternet())
-        if (isConnectedToInternet.value!!) {
-            dataLoader.fetchImageData(NasaImageApplication.application, "data.json").let {
-                imagesLiveData.postValue(it)
-            }
+        loadNasaData()
+    }
+
+    private fun loadNasaData() {
+        dataLoader.fetchImageData(NasaImageApplication.application, "data.json").let {
+            imagesLiveData.postValue(it)
         }
     }
 
@@ -32,4 +33,8 @@ class ImageListViewModel : ViewModel() {
     fun getImageTitle(position: Int): String? = getImageModelByPosition(position)?.title
 
     fun getImageModelByPosition(position: Int): ImageModel? = imagesLiveData.value?.get(position)
+
+    fun updateNetworkConnectivity(isConnected: Boolean) {
+        isNetworkConnected.postValue(isConnected)
+    }
 }
