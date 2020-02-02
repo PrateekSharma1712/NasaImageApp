@@ -2,7 +2,7 @@
 
 Project to load local asset file having NASA images data
 
-##Project Structure
+## Project Structure
 
 <b>ui package - </b> consists of activity, fragments, adapter and viewmodel
 
@@ -19,3 +19,4 @@ Single launching activity having navigation component to navigate from grid frag
 Used network callbacks to handle phone network change.
 
 ## Screenshots
+Screenshots link - <a href="https://github.com/PrateekSharma1712/NasaImageApp/tree/master/screenshots" />
