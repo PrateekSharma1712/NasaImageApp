@@ -19,4 +19,5 @@ Single launching activity having navigation component to navigate from grid frag
 Used network callbacks to handle phone network change.
 
 ## Screenshots
-Screenshots link - <a href="https://github.com/PrateekSharma1712/NasaImageApp/tree/master/screenshots" />
+
+<a href="https://github.com/PrateekSharma1712/NasaImageApp/tree/master/screenshots">Screenshots link</a>
