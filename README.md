@@ -4,14 +4,13 @@ Project to load local asset file having NASA images data
 
 ##Project Structure
 
-**ui package - ** consists of activity, fragments, adapter and viewmodel
+<b>ui package - </b> consists of activity, fragments, adapter and viewmodel
 
-**model package - ** contains single ImageModel data class
+<b>model package - </b> contains single ImageModel data class
 
-**framework package - ** contains data loading class
+<b>framework package - </b> contains data loading class
 
-**di package - ** to make dependency injection in the application
-
+<b>di package - </b> to make dependency injection in the application
 
 
 ## Application Flow
